@@ -42,10 +42,4 @@ steps:
     minorVersion: '0'
     patchVersion: '0'
 
-- task: NuGetCommand@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '38c78008-2919-4d51-8286-54415c7d7b78'
-    allowPackageConflicts: true
+- task: PublishBuildArtifacts@1
